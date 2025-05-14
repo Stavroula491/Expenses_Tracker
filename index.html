@@ -13,6 +13,7 @@
     
     <div class="expense-form">
     <form>
+       
         <h1>Add Expense</h1>
 
         <div class="expense-input">
@@ -34,74 +35,66 @@
 
         <button>Add Expense</button>
         </div>
-    
+
+        
     </form>
     </div>
     
     <div class="expense-table">
-        
-        <form>
-            <label for="date">Choose a date:</label>
-            <input type="date" id="date" name="date">
-        </form>
-        
-
-    <table class="styled-table" border="1" cellpadding="8" cellspacing="0">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Title</th>
-            <th>Amount ($)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2025-05-10</td>
-            <td>Food</td>
-            <td>Bagel</td>
-            <td>35.00</td>
-          </tr>
-          <tr>
-            <td>2025-05-11</td>
-            <td>Transport</td>
-            <td>Bus Tckets</td>
-            <td>12.50</td>
-          </tr>
-          <tr>
-            <td>2025-05-11</td>
-            <td>Utilities</td>
-            <td>Car</td>
-            <td>60.00</td>
-          </tr>
-          <tr>
-            <td>2025-05-12</td>
-            <td>Entertainment</td>
-            <td>Cinema</td>
-            <td>25.00</td>
-          </tr>
-          <tr>
-            <td>2025-05-13</td>
-            <td>Food</td>
-            <td>Pasta</td>
-            <td>40.00</td>
-          </tr>
-          <tr>
-            <td>2025-05-14</td>
-            <td>Transport</td>
-            <td>Rent a bike</td>
-            <td>10.00</td>
-          </tr>
-        </tbody>
-      </table>
+      <form class="date-picker">
+        <label for="date">Choose a date:</label>
+        <input type="date" id="date" name="date">
+      </form>
+      <canvas id="myPieChart" width="1000" height="500"></canvas>
+      <table class="styled-table" border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Amount ($)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-05-10</td>
+              <td>Food</td>
+              <td>Bagel</td>
+              <td>35.00</td>
+            </tr>
+            <tr>
+              <td>2025-05-11</td>
+              <td>Transport</td>
+              <td>Bus Tckets</td>
+              <td>12.50</td>
+            </tr>
+            <tr>
+              <td>2025-05-11</td>
+              <td>Utilities</td>
+              <td>Car</td>
+              <td>60.00</td>
+            </tr>
+            <tr>
+              <td>2025-05-12</td>
+              <td>Entertainment</td>
+              <td>Cinema</td>
+              <td>25.00</td>
+            </tr>
+            <tr>
+              <td>2025-05-13</td>
+              <td>Food</td>
+              <td>Pasta</td>
+              <td>40.00</td>
+            </tr>
+            <tr>
+              <td>2025-05-14</td>
+              <td>Transport</td>
+              <td>Rent a bike</td>
+              <td>10.00</td>
+            </tr>
+          </tbody>
+        </table>
     </div>
-
-    <div class="chart">
-    <canvas id="myPieChart" width="1000" height="500"></canvas>
-    </div>
-
-   
-
 </div>
     <script>
         const ctx = document.getElementById('myPieChart').getContext('2d');
