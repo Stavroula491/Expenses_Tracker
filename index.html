@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Date Picker Example</title>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="expense-form">
+    <form>
+        <h1>Add Expense</h1>
+
+        <div class="expense-input">
+        
+        <div class="expense-sub-input">
+        <label>Add Title</label>
+        <input type="text" name="title" required placeholder="Expense title">
+        </div>
+
+        <div class="expense-sub-input">
+        <label>Amount</label>
+        <input type="text" name="amount" required placeholder="Amount">
+        </div>
+
+        <div class="expense-sub-input">
+            <label>Date</label>
+            <input type="date" name="date" required>
+        </div>
+
+        <button>Add Expense</button>
+        </div>
+    
+    </form>
+    </div>
+    
+    <div class="expense-table">
+        
+        <form>
+            <label for="date">Choose a date:</label>
+            <input type="date" id="date" name="date">
+        </form>
+        
+
+    <table class="styled-table" border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Amount ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-05-10</td>
+            <td>Food</td>
+            <td>Bagel</td>
+            <td>35.00</td>
+          </tr>
+          <tr>
+            <td>2025-05-11</td>
+            <td>Transport</td>
+            <td>Bus Tckets</td>
+            <td>12.50</td>
+          </tr>
+          <tr>
+            <td>2025-05-11</td>
+            <td>Utilities</td>
+            <td>Car</td>
+            <td>60.00</td>
+          </tr>
+          <tr>
+            <td>2025-05-12</td>
+            <td>Entertainment</td>
+            <td>Cinema</td>
+            <td>25.00</td>
+          </tr>
+          <tr>
+            <td>2025-05-13</td>
+            <td>Food</td>
+            <td>Pasta</td>
+            <td>40.00</td>
+          </tr>
+          <tr>
+            <td>2025-05-14</td>
+            <td>Transport</td>
+            <td>Rent a bike</td>
+            <td>10.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart">
+    <canvas id="myPieChart" width="1000" height="500"></canvas>
+    </div>
+
+   
+
+</div>
+    <script>
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+        const myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Food', 'Transport', 'Utilities', 'Entertainment'],
+            datasets: [{
+              label: 'Expenses',
+              data: [350, 150, 200, 100],
+              backgroundColor: [
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)'
+              ],
+              borderColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: false,
+          }
+        });
+      </script>
+</body>
+</html>
